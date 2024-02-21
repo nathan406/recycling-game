@@ -1,4 +1,3 @@
-
 let trashDom = document.querySelector(".trash img")
 let bins = document.querySelectorAll(".trashBins img")
 
@@ -45,6 +44,9 @@ setInterval(()=>{
 bins.forEach(bin=>{
     bin.addEventListener("dragover",dragTrashOverBin)
     bin.addEventListener("drop",dropTrash)
+    // For mobile devices
+    bin.addEventListener("touchmove", dragTrashOverBin)
+    bin.addEventListener("touchend", dropTrash)
 })
 
 
